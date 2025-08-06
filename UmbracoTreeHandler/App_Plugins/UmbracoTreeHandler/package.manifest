@@ -1,0 +1,35 @@
+﻿{
+  "propertyEditors": [
+    {
+      "alias": "Custom.MultiCheckboxDropdown",
+      "name": "Multi Checkbox Dropdown",
+      "editor": {
+        "view": "~/App_Plugins/UmbracoTreeHandler/treeHandler.editor.html",
+        "valueType": "JSON"
+      }
+    },
+    {
+      "alias": "Custom.MultiCheckboxDropdownDefault",
+      "name": "Multi Checkbox Dropdown Default",
+      "editor": {
+        "view": "~/App_Plugins/UmbracoTreeHandler/treeHandlerDefault.editor.html",
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Options",
+            "description": "Configure the available options for the dropdown",
+            "key": "options",
+            "view": "~/App_Plugins/UmbracoTreeHandler/prevalues.editor.html"
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/UmbracoTreeHandler/treeHandler.Controller.js",
+    "~/App_Plugins/UmbracoTreeHandler/treeHandlerDefault.Controller.js",
+    "~/App_Plugins/UmbracoTreeHandler/prevalues.Controller.js"
+  ]
+}

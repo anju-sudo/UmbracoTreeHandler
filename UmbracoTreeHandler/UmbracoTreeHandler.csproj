@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ContentTargetFolders>.</ContentTargetFolders>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>UmbracoTreeHandler</PackageId>
+    <Product>UmbracoTreeHandler</Product>
+    <Title>UmbracoTreeHandler</Title>
+    <Description>Adds Umbraco user groups to a custom multi-checkbox dropdown and enables group-based visibility on umbraco tree and media in Umbraco 13</Description>
+    <PackageTags>umbraco plugin package;umbraco-marketplace;umbraco;umbraco-v10;umbraco-v13</PackageTags>
+    <Company>Phases</Company>
+    <Authors>Anju</Authors>
+    <PackageIcon>custom_editor.png</PackageIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.1.3</Version>
+    <RepositoryUrl>https://github.com/anju-sudo/UmbracoTreeHandler</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/anju-sudo/UmbracoTreeHandler</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="13.9.3" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App_Plugins\UmbracoTreeHandler\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="packageicon\custom_editor.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UmbracoTreeHandlerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\UmbracoTreeHandler\**\*.*</UmbracoTreeHandlerContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyUmbracoTreeHandlerAssets" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <UmbracoTreeHandlerContentFiles Include="$(UmbracoTreeHandlerContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying UmbracoTreeHandler files: $(UmbracoTreeHandlerContentFilesPath) - #@(UmbracoTreeHandlerContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(UmbracoTreeHandlerContentFiles)" DestinationFiles="@(UmbracoTreeHandlerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\UmbracoTreeHandler\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearUmbracoTreeHandlerAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <UmbracoTreeHandlerDir Include="$(MSBuildProjectDirectory)\App_Plugins\UmbracoTreeHandler\" />
+    </ItemGroup>
+    <Message Text="Clear old UmbracoTreeHandler data" Importance="high" />
+    <RemoveDir Directories="@(UmbracoTreeHandlerDir)" />
+  </Target>
+</Project>

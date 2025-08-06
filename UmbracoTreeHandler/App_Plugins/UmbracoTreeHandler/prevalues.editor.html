@@ -1,0 +1,153 @@
+﻿<div ng-controller="multiCheckboxPrevaluesController">
+    <div class="umb-property">
+        <div class="umb-property-wrapper">
+            <label class="umb-property-label">
+                <span>Options</span>
+                <small>Configure the available options for the dropdown</small>
+            </label>
+            <div class="umb-property-editor">
+                <div class="options-container">
+                    <!-- Existing Options -->
+                    <div ng-repeat="option in model.value track by $index" class="option-row">
+                        <div class="option-inputs">
+                            <input type="text"
+                                   ng-model="option.value"
+                                   placeholder="Value"
+                                   class="form-control option-value" />
+                            <input type="text"
+                                   ng-model="option.label"
+                                   placeholder="Display Label"
+                                   class="form-control option-label" />
+                            <button type="button"
+                                    class="btn btn-danger btn-sm remove-btn"
+                                    ng-click="removeOption($index)"
+                                    ng-disabled="model.value.length <= 1">
+                                <i class="icon-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add New Option Button -->
+                    <div class="add-option-row">
+                        <button type="button"
+                                class="btn btn-success btn-sm"
+                                ng-click="addOption()">
+                            <i class="icon-add"></i> Add Option
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .options-container {
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        padding: 15px;
+        background: #f9f9f9;
+    }
+
+    .option-row {
+        margin-bottom: 10px;
+    }
+
+    .option-inputs {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .option-value {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .option-label {
+        flex: 2;
+        min-width: 200px;
+    }
+
+    .remove-btn {
+        flex-shrink: 0;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .add-option-row {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .form-control {
+        height: 35px;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+
+        .form-control:focus {
+            border-color: #007acc;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 122, 204, 0.3);
+        }
+
+    .btn {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .btn-success {
+        background-color: #5cb85c;
+        color: white;
+    }
+
+        .btn-success:hover {
+            background-color: #449d44;
+        }
+
+    .btn-danger {
+        background-color: #d9534f;
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+
+    .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .umb-property-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+        .umb-property-label small {
+            font-weight: normal;
+            color: #666;
+            display: block;
+            margin-top: 2px;
+        }
+</style>

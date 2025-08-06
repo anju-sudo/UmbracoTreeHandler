@@ -1,0 +1,77 @@
+﻿<div ng-controller="multiCheckboxDropdownDefaultController" class="usergroup-dropdown">
+    <div class="dropdown-wrapper">
+        <div class="dropdown-toggle"
+             ng-click="toggleDropdown()">
+            {{ getDisplayText() }}
+        </div>
+        <div class="dropdown-menu" ng-show="dropdownOpen">
+            <div class="checkbox-item" ng-repeat="option in availableOptions">
+                <label>
+                    <input type="checkbox"
+                           ng-checked="model.value.indexOf(option.value) > -1"
+                           ng-click="toggleOption(option.value)" />
+                    {{ option.label }}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .usergroup-dropdown {
+        position: relative;
+        width: 100%;
+        font-family: sans-serif;
+    }
+
+        .usergroup-dropdown .dropdown-toggle {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            user-select: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+            .usergroup-dropdown .dropdown-toggle:hover {
+                border-color: #999;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .usergroup-dropdown .dropdown-toggle:after {
+                content: '▾';
+                float: right;
+                margin-left: 10px;
+                color: #666;
+            }
+
+        .usergroup-dropdown .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 999;
+            padding: 6px 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .usergroup-dropdown .checkbox-item {
+            margin-bottom: 4px;
+        }
+
+        .usergroup-dropdown label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .usergroup-dropdown input[type="checkbox"] {
+            margin-right: 6px;
+        }
+</style>
