@@ -1,0 +1,43 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Anjumol Babu",
+    "Description": "Software Engineer",
+    "Url": "https://github.com/anju-sudo",
+    "ImageUrl": "https://avatars.githubusercontent.com/anju-sudo",
+    "SyncContributorsFromRepository": true
+  },
+  "Category": "Editor Tools",
+  "Description": "UmbracoTreeHandler is a utility package for Umbraco 13 that enables user group-based access control for content/media trees and provides a customizable multi checkbox dropdown datatype for flexible data configuration.",
+  "DocumentationUrl": "https://github.com/anju-sudo/UmbracoTreeHandler/blob/main/README.md",
+  "LicenseTypes": [ "Free" ],
+  "IssueTrackerUrl": "https://github.com/anju-sudo/UmbracoTreeHandler/issues",
+  "PackageType": "Package",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/anju-sudo/UmbracoTreeHandler/main/screenshots/tree-visibility-example.png",
+      "Caption": "User Group-Based Content Tree"
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/anju-sudo/UmbracoTreeHandler/main/screenshots/multicheckbox-datatype.png",
+      "Caption": "Custom Multi Checkbox Dropdown"
+    }
+  ],
+  "Tags": [
+    "umbraco",
+    "editor",
+    "user groups",
+    "content visibility",
+    "media visibility",
+    "custom dropdown",
+    "backoffice",
+    "access control"
+  ],
+  "VersionSpecificPackageIds": [
+    {
+      "UmbracoMajorVersion": 13,
+      "PackageId": "UmbracoTreeHandler"
+    }
+  ],
+  "VideoUrl": ""
+}
